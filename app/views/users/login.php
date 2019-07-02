@@ -1,7 +1,7 @@
-<?php require APPROOT . '/views/inc/header.php'; ?>
+<?php require APPROOT . '/views/includes/header.php'; ?>
   <div class="row">
     <div class="col-md-6 mx-auto">
-      <div class="card card-body bg-light mt-5">
+      <div class="card card-body bg-light mt-3">
         <?php flash('register_success'); ?>
         <h2>Login</h2>
         <p>Please fill in your credentials to log in</p>
@@ -28,4 +28,4 @@
       </div>
     </div>
   </div>
-<?php require APPROOT . '/views/inc/footer.php'; ?>
+<?php require APPROOT . '/views/includes/footer.php'; ?>

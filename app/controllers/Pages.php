@@ -1,24 +1,31 @@
 <?php
-  class Pages extends Controller {
-    public function __construct(){
-     
-    }
-    
-    public function index(){
-      $data = [
-        'title' => 'SharePosts',
-        'description' => 'Simple social network built on the NoeMVC PHP framework'
-      ];
-     
-      $this->view('pages/index', $data);
-    }
 
-    public function about(){
-      $data = [
-        'title' => 'About Us',
-        'description' => 'App to share posts with other users'
-      ];
+class Pages extends Controller{
+	public function __construct(){
+		
+	}
 
-      $this->view('pages/about', $data);
-    }
-  }
+	public function index(){
+		if(isLoggedIn()){
+			redirect('posts');
+		}
+		
+		$data = [
+			'title' 		=> 'Welcome to Posts',
+			'description'	=> 'Simple posting built on custom MVC framework'
+			
+		];
+		$this->view('pages/index', $data);
+
+		
+
+	}
+
+	public function about(){
+		$data = [
+			'title' => 'About Us',
+			'description'	=> 'This is the About Us page'
+		];
+		$this->view('pages/about', $data);
+	}
+}
